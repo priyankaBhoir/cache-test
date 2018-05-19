@@ -8,10 +8,10 @@ const mongoose = require('mongoose');
 const http = require('http');
 const fs = require('fs')
 const bodyParser = require('body-parser');
-const config = require('./config/config.js').get(process.env.NODE_ENV);
+const config = require('../../config/config.js').get(process.env.NODE_ENV);
 
 // create a write stream (in append mode)
-const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log/access.log'), {flags: 'a'})
+const accessLogStream = fs.createWriteStream(path.join(__dirname, '../log/access.log'), {flags: 'a'})
  
 // setup the logger
 

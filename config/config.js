@@ -6,15 +6,20 @@ var config = {
   //update According to you local setup
   default: {
     serverPORT: 3009,
-    dbName: 'mongodb://localhost/cache-local?authSource=admin',
-    OPTIONS: {
-      user: 'dbuser',
-      pass: 'mypwd',
-      auth: {
-        authdb: 'admin'
-      }
-    }
+    dbName: 'mongodb://localhost/cache-local'
   }
+  // setup with auth
+  // default: {
+  //   serverPORT: 3009,
+  //   dbName: 'mongodb://localhost/cache-local?authSource=admin',
+  //   OPTIONS: {
+  //     user: 'dbuser',
+  //     pass: 'mypwd',
+  //     auth: {
+  //       authdb: 'admin'
+  //     }
+  //   }
+  // }
   
 }
 

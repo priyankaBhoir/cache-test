@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const config = require('../constant/constant');
 // var uniqueValidator = require('mongoose-unique-validator');
 
 var CacheSchema = new mongoose.Schema({
@@ -12,10 +13,9 @@ var CacheSchema = new mongoose.Schema({
 // on every save, add the date
 CacheSchema.pre('save', function(next) {
   // get the current date
-  var currentDate = new Date();
-
+  var newTTL = new Date(new Date().getTime() + (config.CACHE_VALID_TILL_IN_SECONDS * 1000));
   // change the updated_at field to current date
-  this.TTL = currentDate;
+  this.TTL = newTTL;
   next();
 });
 
