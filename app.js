@@ -7,6 +7,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const http = require('http');
 const fs = require('fs')
+const bodyParser = require('body-parser');
 const config = require('./config/config.js').get(process.env.NODE_ENV);
 
 // create a write stream (in append mode)
@@ -28,6 +29,9 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/cache', cacheRouter);
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

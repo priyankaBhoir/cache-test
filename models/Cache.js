@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 // var uniqueValidator = require('mongoose-unique-validator');
 
 var CacheSchema = new mongoose.Schema({
-  key: { type: String, required: true, unique: true },
+  cacheKey: { type: String, required: true, unique: true },
   value: String,
   TTL: Date
 }, {timestamps: true});
